@@ -33,7 +33,6 @@ class problem:
             plt.show()
         else:
             print("只能绘制二维/三维图形")
-            return
 
     def solve(self):
         
@@ -114,7 +113,6 @@ class problem:
             plt.show()
         else:
             print("只能绘制二维/三维图形")
-            return
 
     def show(self):
         if (not self.__solved):

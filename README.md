@@ -1,5 +1,5 @@
 ## 运用梯度下降法解决线性/非线性回归问题
-用来完成一些运筹学的作业。仅当练习，不追求多么高的效率，可能存在许多问题
+用来解决一些运筹学相关的问题。仅当练习，不追求多么高的效率，可能存在些许问题。
 
 ### regression.py
 文件regression.py提供了problem类，其实例对象提供了plotSets、solve、show、plot等方法。需要安装numpy和matplotlib
@@ -22,7 +22,8 @@ p.plot() #绘制函数图像(同样只能绘制二维和三维图像)
 
 ### reg_test.py
 
-reg_test1.py～reg_test6.py为几个使用例子，分别演示了线性、指数、二次、二元、sigmoid、二元二次等回归。
+reg_test1.py ~ reg_test6.py 是几个例子，分别演示了线性、指数、二次、二元、sigmoid、二元二次等回归。
+
 下面为reg_test3.py的代码
 ```python
 from regression import problem
