@@ -36,6 +36,11 @@ class problem:
             return
 
     def solve(self):
+        
+        if (self.__solved):
+            print("问题已求解")
+            return
+        
         def J(th):
             res = 0
             for i in range(self.__m):
