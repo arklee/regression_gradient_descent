@@ -1,5 +1,5 @@
 ## 运用梯度下降法解决线性/非线性问题
-用来完成一些运筹学的作业。仅当练习，不追求极致的效率，可能存在许多问题
+用来完成一些运筹学的作业。仅当练习，不追求多么高的效率，可能存在许多问题
 
 ### regression.py
 文件regression.py提供了problem类，其实例对象提供了plotSets、solve、show、plot等方法。需要安装numpy和matplotlib
