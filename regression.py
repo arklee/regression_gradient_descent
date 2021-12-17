@@ -124,7 +124,10 @@ class problem:
                 val = self.__theta[i]
                 thName = inspect.getfullargspec(self.__h).args[0]
                 ret = ret.replace(thName+"["+str(i)+"]", "(" + str(val)[:5] + ")" if val < 0 else str(val)[:5])
-            print("拟合结果为：" + ret)
+            for i in range(len(self.__input[0])):
+                thName = inspect.getfullargspec(self.__h).args[1]
+                ret = ret.replace(thName+"["+str(i)+"]", thName+str(i))
+            print("拟合结果为：h(x) =" + ret)
             print("Theta：" + str(self.__theta))
             print("最终学习率为：" + str(self.__alpha))
             print("代价值为：" + str(self.__cost))
