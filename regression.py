@@ -1,8 +1,8 @@
-# 使用梯度下降法拟合回归函数，具体使用方法见test1-4，可以绘制二维图像
-
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime
+import inspect
+import re
 
 
 class problem:
@@ -120,6 +120,13 @@ class problem:
         if (not self.__solved):
             print("该问题未求解或求解失败")
         else:
-            print("拟合结果为：" + str(self.__theta))
+            lines = inspect.getsource(self.__h)
+            ret = lines[re.search('return', lines).span()[1]:-1]
+            for i in range(self.__featureCount):
+                val = self.__theta[i]
+                thName = inspect.getfullargspec(self.__h).args[0]
+                ret = ret.replace(thName+"["+str(i)+"]", "(" + str(val)[:5] + ")" if val < 0 else str(val)[:5])
+            print("拟合结果为：" + ret)
+            print("Theta：" + str(self.__theta))
             print("最终学习率为：" + str(self.__alpha))
             print("代价值为：" + str(self.__cost))
