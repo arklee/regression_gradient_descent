@@ -120,13 +120,12 @@ class problem:
         else:
             lines = inspect.getsource(self.__h)
             ret = lines[re.search('return', lines).span()[1]:-1]
+            thName, xName = inspect.getfullargspec(self.__h).args
             for i in range(self.__featureCount):
                 val = self.__theta[i]
-                thName = inspect.getfullargspec(self.__h).args[0]
                 ret = ret.replace(thName+"["+str(i)+"]", "(" + str(val)[:5] + ")" if val < 0 else str(val)[:5])
             for i in range(len(self.__input[0])):
-                thName = inspect.getfullargspec(self.__h).args[1]
-                ret = ret.replace(thName+"["+str(i)+"]", thName+str(i))
+                ret = ret.replace(xName+"["+str(i)+"]", xName+str(i))
             print("拟合结果为：h(x) =" + ret)
             print("Theta：" + str(self.__theta))
             print("最终学习率为：" + str(self.__alpha))
