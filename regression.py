@@ -77,7 +77,7 @@ class problem:
                 self.__alpha = self.__alpha / 3
                 continue
         end = datetime.datetime.now()
-        print("耗时:" + str(end - start))
+        print("耗时：" + str(end - start))
 
     def plot(self):
         if not self.__solved:
